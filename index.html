@@ -93,21 +93,33 @@ Show off your recent press mentions with a couple lines of CSS and get back to m
 
 
 <style>
-#display{
-    border:red solid 1px;
-    height:100px; 
-    display:table-cell; 
-    width:100%;
-    vertical-align:middle
+.wrapper {
+    display: inline-block;
+    white-space: nowrap;
+
+    border: 2px solid #007EFD;
 }
-#display i {
-  
-  font-size: 100px;
+
+.block {
+    width: 180px; /* Can vary too */
+    padding: 30px 5px 5px;
+    margin: 5px 2px;
+    
+    display: inline-block;
+    white-space: normal;
+    vertical-align: middle;
+    text-align:center;
+
+    font: 12px/1.5 Arial, sans-serif;
+    
+    color: #FFF;
 }
 </style>
 
-
-<div id = "display"><i class="pr pr-readers-digest-2 pr-2x"></i><input class = "logo-id" value ="pr-readers-digest-2"></div>
+<span class="wrapper">
+    <span class="block"><i class="pr pr-readers-digest-2 pr-2x"></i></span>
+    <span class="block"><input value ="pr-readers-digest-2"></span>
+</span>
 
       <footer class="site-footer">
 
