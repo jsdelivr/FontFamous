@@ -38,7 +38,32 @@
     display:table-cell; 
     vertical-align:middle
 }
-    </style>
+
+.wrapper {
+    display: inline-block;
+    white-space: nowrap;
+height: 90%;
+    /*border: 2px solid #007EFD;*/
+}
+
+.block {
+    display: inline-block;
+    white-space: normal;
+    vertical-align: middle;
+    text-align:center;
+}
+
+.wrapper input {
+    font-size: 13px;
+    border-radius: 5px;
+    font-family: monospace;
+    margin: 0px 0px 20px 10px;
+    height: 35px;
+    background-color: #e6e6e6;
+    border: 0px;
+    padding: 5px;
+}
+</style>
   </head>
   <body>
     <section class="page-header">
@@ -87,36 +112,17 @@ Show off your recent press mentions with a couple lines of CSS and get back to m
       <i class="pr pr-washington-post"></i>
 </section>
 
-<style>
-.wrapper {
-    display: inline-block;
-    white-space: nowrap;
-height: 90%;
-    /*border: 2px solid #007EFD;*/
-}
 
-.block {
-    display: inline-block;
-    white-space: normal;
-    vertical-align: middle;
-    text-align:center;
-}
+<section>
+  <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true">
+  <span aria-hidden="true" class="octicon octicon-link"></span></a>Easy Implementation</h3>
 
-.wrapper input {
-    font-size: 13px;
-    border-radius: 5px;
-    font-family: monospace;
-    margin: 0px 0px 20px 10px;
-    height: 35px;
-    background-color: #e6e6e6;
-    border: 0px;
-    padding: 5px;
-}
-</style>
+<p>Simply include the Font Famous style sheet in your header and use the following classes to style any element as a logo.</p>
 
 <span class="wrapper">
-    <span class="block"><i class="pr pr pr-nyt-2" style="font-size:65px"></i></span>
-    <span class="block"><input onClick="this.select();" value ="pr pr-nyt-2" readonly="readonly"></span>
+    <span class="block"><i class="pr pr-nyt-2" style="font-size:65px"></i></span>
+    <span class="block"><input onClick="this.select();" value ="pr-nyt-2" readonly="readonly"></span>
 </span>
 <span class="wrapper">
     <span class="block"><i class="pr pr-readers-digest-2" style="font-size:65px"></i></span>
@@ -124,13 +130,13 @@ height: 90%;
 </span>
 <span class="wrapper">
     <span class="block"><i class="pr pr-wsj" style="font-size:65px"></i></span>
-    <span class="block"><input onClick="this.select();" value ="pr pr-wsj" readonly="readonly"></span>
+    <span class="block"><input onClick="this.select();" value ="pr-wsj" readonly="readonly"></span>
 </span>
 <span class="wrapper">
     <span class="block"><i class="pr pr-cosmopolitan" style="font-size:65px"></i></span>
     <span class="block"><input onClick="this.select();" value ="pr-cosmopolitan" readonly="readonly"></span>
 </span>
-
+</section>
       <footer class="site-footer">
 
         <span class="site-footer-credits"> Created by Anthony David Adams & PRMatch.com, PublicityHackers.com, PublicitySchool.com</span>
