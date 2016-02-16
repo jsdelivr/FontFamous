@@ -3,11 +3,11 @@
 /* fontfamous */
 @font-face {
   font-family: "fontfamous";
-  src:url("https://file.myfontastic.com/iqHCB5G7EZoCeGLQKYrKRR/fonts/1455575648.eot");
-  src:url("https://file.myfontastic.com/iqHCB5G7EZoCeGLQKYrKRR/fonts/1455575648.eot?#iefix") format("embedded-opentype"),
-    url("https://file.myfontastic.com/iqHCB5G7EZoCeGLQKYrKRR/fonts/1455575648.woff") format("woff"),
-    url("https://file.myfontastic.com/iqHCB5G7EZoCeGLQKYrKRR/fonts/1455575648.ttf") format("truetype"),
-    url("https://file.myfontastic.com/iqHCB5G7EZoCeGLQKYrKRR/fonts/1455575648.svg#1455575648") format("svg");
+  src:url("http://fontfamous.com/fonts/font-famous.eot");
+  src:url("http://fontfamous.com/fonts/font-famous.eot?#iefix") format("embedded-opentype"),
+    url("http://fontfamous.com/fonts/font-famous.woff") format("woff"),
+    url("http://fontfamous.com/fonts/font-famous.ttf") format("truetype"),
+    url("http://fontfamous.com/fonts/font-famous.svg#1455575648") format("svg");
   font-weight: normal;
   font-style: normal;
 }
