@@ -12,3 +12,6 @@ The idea is that it is a pain in the butt to find high quality logos to show off
 Font Famous solves this problem by allowing you to simply include our CSS stylesheet and adding a class to any element you want to transform it into a scalable vector media logo. 
 
 You can style these logos with CSS like you would any icon or font. 
+
+Big thanks to Justin Dorfman @ MaxCDN, Dave Gandy @ Font Famous and all the folks who have inspired / helped this project get this far.
+
