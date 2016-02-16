@@ -94,7 +94,7 @@ height: 90%;
 
 
 <!-- SendinBlue Signup Form HTML Code -->
-<form class="description" id="theform" name="theform" action="https://my.sendinblue.com/users/subscribeembed/js_id/2btt1/id/2">
+<form class="description" id="theform" name="theform" action="https://my.sendinblue.com/users/subscribeembed/js_id/2btt1/id/2" onsubmit ="return false;">
 	<input type="hidden" name="js_id" id="js_id" value="2btt1">
 	<input type="hidden" name="listid" id="listid" value="9">
 	<input type="hidden" name="from_url" id="from_url" value="yes">
@@ -103,7 +103,10 @@ height: 90%;
 	<input type="email" name="email" id="email" value="" placeholder="you@email.com" required>
 	<button class="send_button" type="submit">Join the Font Famous e-mail list.</button>
 </form>
-
+<script type='text/javascript' src='https://my.sendinblue.com/public/theme/version3/js/subscribe-validate.js'></script>
+<script type='text/javascript'>
+    jQuery.noConflict(true);
+</script>
 </section>
     <section class="main-content">
       <h3>
