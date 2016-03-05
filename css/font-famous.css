@@ -1,13 +1,19 @@
+/*!
+ * Font Famous v1.0.0 (http://fontfamous.com)
+ * Copyright 2016 Anthony David Adams
+ * Licensed under MIT
+ */
+
 @charset "UTF-8";
 
 /* fontfamous */
 @font-face {
   font-family: "fontfamous";
-  src:url("http://fontfamous.com/fonts/fontfamous.eot");
-  src:url("http://fontfamous.com/fonts/fontfamous.eot?#iefix") format("embedded-opentype"),
-    url("http://fontfamous.com/fonts/fontfamous.woff") format("woff"),
-    url("http://fontfamous.com/fonts/fontfamous.ttf") format("truetype"),
-    url("http://fontfamous.com/fonts/fontfamous.svg#1455575648") format("svg");
+  src:url("https://maxcdn.fontfamous.com/fonts/fontfamous.eot");
+  src:url("https://maxcdn.fontfamous.com/fonts/fontfamous.eot?#iefix") format("embedded-opentype"),
+    url("https://maxcdn.fontfamous.com/fonts/fontfamous.woff") format("woff"),
+    url("https://maxcdn.fontfamous.com/fonts/fontfamous.ttf") format("truetype"),
+    url("https://maxcdn.fontfamous.com/fonts/fontfamous.svg#1455575648") format("svg");
   font-weight: normal;
   font-style: normal;
 }
