@@ -90,14 +90,12 @@ height: 90%;
 
 <!-- SendinBlue Signup Form HTML Code -->
 
-<div id="sib_embed_signup" style="padding: 10px;">
+<div id="sib_embed_signup">
     <div class="wrapper" style="position:relative;margin-left: auto;margin-right: auto;">
         <input type="hidden" id="sib_embed_signup_lang" value="en">
         <input type="hidden" id="sib_embed_invalid_email_message" value="That email address is not valid. Please try again">
 	    <input type="hidden" name="primary_type" id="primary_type" value="email">
-        <div id="sib_loading_gif_area" style="position: absolute;z-index: 9999;display: none;">
-            <img src="http://img.mailinblue.com/new_images/loader_sblue.gif" style="display: block;margin-left: auto;margin-right: auto;position: relative;top: 40%;">
-        </div>
+        
         <form class="description" id="theform" name="theform" action="https://my.sendinblue.com/users/subscribeembed/js_id/2btt1/id/2" onsubmit="return false;">
             <input type="hidden" name="js_id" id="js_id" value="2btt1"><input type="hidden" name="listid" id="listid" value="9"><input type="hidden" name="from_url" id="from_url" value="yes"><input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value="">
             <div class="container rounded">
@@ -107,12 +105,9 @@ height: 90%;
                         <div class="email-group ui-sortable">
                             <div class="row mandatory-email" style="padding: 10px 20px; position: relative; font-family: Futura, 'Century Gothic', 'Apple Gothic', sans-serif; color: rgb(52, 52, 52); font-size: 17px;">
                                 <input type="text" name="email" id="email" value="" style="padding: 10px 4px; width: 400px; min-width: auto;">
-                                <button class="button editable " type="submit" data-editfield="subscribe"  style="font-family: Futura, 'Century Gothic', 'Apple Gothic', sans-serif; color: rgb(255, 255, 255); display: inline-block; white-space: nowrap; min-height: 40px; margin: 0px 5px 0px 0px; padding: 0px 22px; text-decoration: none; text-transform: uppercase; text-align: center; font-weight: bold; font-style: normal; font-size: 14px; cursor: pointer; border: 0px; border-radius: 4px; vertical-align: top; height: auto; line-height: 150%; background: rgb(5, 5, 5);">Subscribe</button>
-                         
+                                <button class="button editable " type="submit" data-editfield="subscribe">Subscribe</button>
                             </div>
                          </div>
-       
-                         <div style="clear:both;"></div>
                         </div>
         </form>
     </div>
