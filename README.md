@@ -31,8 +31,8 @@ MIT
 ### Created by
 [Anthony David Adams](https://twitter.com/AnthonyAdams)
 
-Follow `@FontFamous` on Twitter for updated.
+Follow [@FontFamous](https://twitter.com/FontFamous) on Twitter for updates.
 
 ### Thanks
 
-Big thanks to Justin Dorfman @ MaxCDN, Dave Gandy @ Font Famous and all the folks who have inspired / helped this project get this far.
+Big thanks to [Justin Dorfman](https://twitter.com/jdorfman) @ [MaxCDN](http://maxcdn.com), [Dave Gandy](https://twitter.com/davegandy) @ [Font Awesome](http://fontawesome.io) and all the folks who have inspired / helped this project get this far.

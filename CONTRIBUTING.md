@@ -5,6 +5,7 @@ Before adding any new logos to this repo please [create an issue](https://github
 #### Good Logo Category Examples
 * Magazine
 * TV News Program
+* Radio Show
 * Podcast
 * Newspaper
 * *Popular* Blog or Review Site
