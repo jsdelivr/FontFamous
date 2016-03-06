@@ -1,17 +1,38 @@
-# fontfamous.github.io
-Font Famous is the free vector media logo font. 
+# [Font Famous](http://fontfamous.com) v1.0.0
 
-created by Anthony David Adams
-@AnthonyAdams
-@FontFamous
+Font Famous is the free vector media logo font.
 
+The idea is that it is a pain in the butt to find high quality logos to show off your press mentions. You have to dig through Google Images and then spin out in Photoshop.
 
+Font Famous solves this problem by allowing you to simply include our CSS stylesheet and adding a class to any element you want to transform it into a scalable vector media logo.
 
-The idea is that it is a pain in the butt to find high quality logos to show off your press mentions. You have to dig through Google Images and then spin out in Photoshop. 
+### What's Included
 
-Font Famous solves this problem by allowing you to simply include our CSS stylesheet and adding a class to any element you want to transform it into a scalable vector media logo. 
+```
+├── css
+│   ├── font-famous.css
+│   └── font-famous.min.css
+└── fonts
+    ├── README
+    ├── fontfamous.eot
+    ├── fontfamous.svg
+    ├── fontfamous.ttf
+    └── fontfamous.woff
+```
 
-You can style these logos with CSS like you would any icon or font. 
+### Contributing
+
+Please read `CONTRIBUTING.md`.
+
+### License
+
+MIT
+
+### Created by
+[Anthony David Adams](https://twitter.com/AnthonyAdams)
+
+Follow `@FontFamous` on Twitter for updated.
+
+### Thanks
 
 Big thanks to Justin Dorfman @ MaxCDN, Dave Gandy @ Font Famous and all the folks who have inspired / helped this project get this far.
-
