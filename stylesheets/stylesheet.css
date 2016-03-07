@@ -305,3 +305,19 @@ height: 90%;
 .connection-media {
   text-align: center;
 }
+
+.zoom-tilt {
+  -webkit-transition:all 0.3s ease-out;
+  -moz-transition:all 0.3s ease-out;
+  -ms-transition:all 0.3s ease-out;
+  -o-transition:all 0.3s ease-out;
+  transition:all 0.3s ease-out;
+}
+
+.zoom-tilt:hover {
+  -webkit-transform:rotate(15deg) scale(1.3);
+  -moz-transform:rotate(15deg) scale(1.3);
+  -ms-transform:rotate(15deg) scale(1.3);
+  -o-transform:rotate(15deg) scale(1.3);
+  transform:rotate(15deg) scale(1.3);
+}
