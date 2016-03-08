@@ -2,9 +2,9 @@
 
 Font Famous is the free vector media logo font.
 
-The idea is that it is a pain in the butt to find high quality logos to show off your press mentions. You have to dig through Google Images and then spin out in Photoshop.
+Stop wasting time searching Google Images and spinning out in Photoshop trying to format media logos for your site. 
 
-Font Famous solves this problem by allowing you to simply include our CSS stylesheet and adding a class to any element you want to transform it into a scalable vector media logo.
+Show off your recent press mentions with a couple lines of CSS and get back to making fame worthy products.
 
 ### What's Included
 
@@ -22,7 +22,7 @@ Font Famous solves this problem by allowing you to simply include our CSS styles
 
 ### Contributing
 
-Please read `CONTRIBUTING.md`.
+Please read [CONTRIBUTING.md](https://github.com/fontfamous/fontfamous.github.io/blob/master/CONTRIBUTING.md).
 
 ### License
 
