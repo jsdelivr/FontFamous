@@ -37,4 +37,4 @@ Follow [@FontFamous](https://twitter.com/FontFamous) on Twitter for updates.
 
 Big thanks to [Justin Dorfman](https://twitter.com/jdorfman) @ [MaxCDN](http://maxcdn.com), [Dave Gandy](https://twitter.com/davegandy) @ [Font Awesome](http://fontawesome.io) and all the folks who have inspired / helped this project get this far.
 
-The Font Famous logo includes "[Star](https://thenounproject.com/term/cool-star/12713/)" by Paulo Sá Ferreira from [the Noun Project[(https://thenounproject.com).
+The Font Famous logo includes "[Star](https://thenounproject.com/term/cool-star/12713/)" by Paulo Sá Ferreira from [the Noun Project](https://thenounproject.com).
