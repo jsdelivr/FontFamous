@@ -1,0 +1,17 @@
+{
+	"name": "fontfamous",
+	"description": "The free vector media logo font",
+	"version": "1.1.0",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jsdelivr/FontFamous.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jsdelivr/FontFamous/issues"
+	},
+	"homepage": "https://FontFamous.com",
+	"files": [
+		"dist"
+	]
+}
