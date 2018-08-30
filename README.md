@@ -13,7 +13,6 @@ Show off your recent press mentions with a couple lines of CSS and get back to m
 │   ├── font-famous.css
 │   └── font-famous.min.css
 └── fonts
-    ├── README
     ├── fontfamous.eot
     ├── fontfamous.svg
     ├── fontfamous.ttf
