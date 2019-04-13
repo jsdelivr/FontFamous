@@ -1,4 +1,4 @@
-# [Font Famous](http://fontfamous.com) v1.0.0
+# [Font Famous](http://fontfamous.com) v2.0.0
 
 Font Famous is the free vector media logo font.
 
@@ -12,11 +12,12 @@ Show off your recent press mentions with a couple lines of CSS and get back to m
 ├── css
 │   ├── font-famous.css
 │   └── font-famous.min.css
-└── fonts
-    ├── fontfamous.eot
-    ├── fontfamous.svg
-    ├── fontfamous.ttf
-    └── fontfamous.woff
+└── font
+    ├── font-famous.eot
+    ├── font-famous.svg
+    ├── font-famous.ttf
+    ├── font-famous.woff
+    └── font-famous.woff2
 ```
 
 ### Contributing
