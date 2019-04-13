@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>{{page.title}}</title>
+		<meta name="description" content="{{page.description}}">
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Font Famous</title>
+		<meta property="og:title" content="Font Famous">
+		<meta property="og:site_name" content="Font Famous">
+		<meta property="og:url" content="https://fontfamous.com">
+		<meta property="og:description" content="Stop wasting time searching Google Images and spinning out in Photoshop trying to format media logos for your site. Show off your recent press with one line of CSS and get back to making fame worthy products. By Anthony David Adams.">
+		<meta property="fb:app_id" content="1114390398594791">
+		<meta property="og:type" content="product">
+		<meta property="og:image" content="http://fontfamous.com/fbshare.png">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" href="/build/img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@3.0.2/normalize.css" media="screen">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
+		<link rel="stylesheet" href="/build/css/style.css">
+		<link rel="stylesheet" href="/dist/css/font-famous.css">
+	</head>
+	<body>
+		{{>header}}
+		{{>body}}
+		{{>footer}}
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+		<script src="/build/js/common.js"></script>
+
+		{{#each scripts}}
+			<script src="{{this}}?{{../commit_hash}}"></script>
+		{{/each}}
+	</body>
+</html>

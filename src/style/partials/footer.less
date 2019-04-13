@@ -1,0 +1,60 @@
+.footer {
+  padding: 60px 0 140px 0;
+  background-color: rgba(236, 238, 242, 0.5);
+
+  @media @screen-xs-max {
+	padding: 16px 0 24px 0;
+  }
+
+  .original, .maintained {
+	font-size: 18px;
+	color: @secondary-text-color;
+	font-weight: 400;
+	letter-spacing: 0.2px;
+	line-height: 28px;
+
+	@media @screen-xs-max {
+	  font-size: 14px;
+	  line-height: 18px;
+	}
+
+	a {
+	  text-decoration: underline;
+	  color: @normal-text-color;
+	  transition: color 400ms ease;
+
+	  &:hover, &:focus, &.active {
+		color: @highlight-text-color;
+	  }
+	}
+  }
+
+  .thanks {
+	font-size: 14px;
+	color: @secondary-text-color;
+	font-weight: 400;
+	letter-spacing: 0.16px;
+	line-height: 22px;
+	max-width: 640px;
+	margin-top: 20px;
+
+	@media @screen-xs-max {
+	  font-size: 12px;
+	  line-height: 16px;
+	  margin-top: 10px;
+	}
+
+	.underline {
+	  text-decoration: underline;
+
+	  a {
+		color: @normal-text-color;
+		transition: color 400ms ease;
+
+		&:hover, &:focus, &.active {
+		  color: @highlight-text-color;
+		}
+	  }
+	}
+  }
+}
