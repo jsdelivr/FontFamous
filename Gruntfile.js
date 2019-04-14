@@ -163,6 +163,17 @@ module.exports = async function (grunt) {
 				} ],
 			},
 		},
+		cssmin: {
+			target: {
+				files: [{
+					expand: true,
+					cwd: './dist/css',
+					src: 'font-famous.css',
+					dest: './dist/css',
+					ext: '.min.css'
+				}]
+			}
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -172,6 +183,7 @@ module.exports = async function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-sitemap');
 	grunt.loadNpmTasks('grunt-webfont');
 
@@ -189,6 +201,6 @@ module.exports = async function (grunt) {
 
 		fs.writeFileSync('./src/font/data.json', JSON.stringify(logos));
 	});
-	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development','sitemap', 'copy', 'webfont', 'connect' ]);
-	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less','sitemap', 'copy', 'webfont', 'uglify:production' ]);
+	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development','sitemap', 'copy', 'webfont', 'cssmin', 'connect' ]);
+	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less','sitemap', 'copy', 'webfont', 'cssmin', 'uglify:production' ]);
 };
