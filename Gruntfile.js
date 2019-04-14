@@ -29,6 +29,7 @@ module.exports = async function (grunt) {
 					fontFamilyName: 'Font Famous',
 					optimize: false,
 					types: 'eot,woff2,woff,ttf,svg',
+					htmlDemo: false,
 					templateOptions: {
 						baseClass: 'pr',
 						classPrefix: 'pr-'
