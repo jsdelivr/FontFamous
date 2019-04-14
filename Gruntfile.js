@@ -52,15 +52,15 @@ module.exports = async function (grunt) {
 					data: ['./src/font/data.json'],
 					sitemap: {
 						homepage: 'http://www.fontfamous.com',
-						dest: './build/',
-						removefolder: 'build/',
+						dest: './docs/',
+						removefolder: 'docs/',
 						pretty: true,
 						prettyimproved: true
 					}
 				},
 				files: [ {
 					cwd: './src/content/',
-					dest: './build/',
+					dest: './docs/',
 					expand: true,
 					src: [ '**/*.hbs', '!$test-from-$target.hbs' ]
 				}],
@@ -74,7 +74,7 @@ module.exports = async function (grunt) {
 					includeHTML: 'TEST'
 				},
 				files: [{
-					dest: './build/',
+					dest: './docs/',
 					src: '!*',
 				}]
 			},
@@ -83,13 +83,13 @@ module.exports = async function (grunt) {
 		copy: {
 			main: {
 				files: [
-					{ expand: true, cwd: 'src/img/', src: [ '**/*' ], dest: 'build/img/' },
-					{ expand: true, cwd: 'src/fonts/', src: [ '**/*' ], dest: 'build/fonts/' },
-					{ expand: true, cwd: 'src/js/', src: [ '**/*' ], dest: 'build/js/' },
-					{ expand: true, cwd: 'src/icons/', src: [ '**/*' ], dest: 'build/icons/' },
-					{ expand: true, cwd: 'build/', src: [ '**/*.html' ], dest: 'build/' },
-					{ expand: true, cwd: 'src/content/', src: [ '**/_*' ], dest: 'build/'},
-					{ expand: true, cwd: 'src/logos/font/', src: [ '**/*' ], dest: 'build/logos'},
+					{ expand: true, cwd: 'src/img/', src: [ '**/*' ], dest: 'docs/img/' },
+					{ expand: true, cwd: 'src/fonts/', src: [ '**/*' ], dest: 'docs/fonts/' },
+					{ expand: true, cwd: 'src/js/', src: [ '**/*' ], dest: 'docs/js/' },
+					{ expand: true, cwd: 'src/icons/', src: [ '**/*' ], dest: 'docs/icons/' },
+					{ expand: true, cwd: 'docs/', src: [ '**/*.html' ], dest: 'docs/' },
+					{ expand: true, cwd: 'src/content/', src: [ '**/_*' ], dest: 'docs/'},
+					{ expand: true, cwd: 'src/logos/font/', src: [ '**/*' ], dest: 'docs/logos'},
 				],
 			},
 		},
@@ -97,36 +97,36 @@ module.exports = async function (grunt) {
 		less: {
 			development: {
 				options: {
-					paths: [ './build/css/' ],
+					paths: [ './docs/css/' ],
 					sourceMap: true,
-					sourceMapFilename: './build/css/style.css.map',
+					sourceMapFilename: './docs/css/style.css.map',
 					outputSourceFiles: true,
-					sourceMapURL: '/build/style.css.map',
+					sourceMapURL: '/docs/style.css.map',
 					strictMath: true
 				},
 				files: {
-					'./build/css/style.css': './src/style/style.less'
+					'./docs/css/style.css': './src/style/style.less'
 				}
 			},
 			production: {
 				options: {
-					paths: [ './build/' ],
+					paths: [ './docs/' ],
 					compress: true,
 					strictMath: true
 				},
 				files: {
-					'./build/css/style.css': './src/style/style.less'
+					'./docs/css/style.css': './src/style/style.less'
 				}
 			}
 		},
 
-		clean: [ 'dist/', 'build/' ],
+		clean: [ 'dist/', 'docs/' ],
 
 		sitemap: {
 			dist: {
 				homepage:'https://fontfamous.com/',
-				pattern: ['build/**/*.html'],
-				siteRoot: './build/',
+				pattern: ['docs/**/*.html'],
+				siteRoot: './docs/',
 				changefreq: 'weekly',
 				extension: {
 					required: false,
@@ -163,7 +163,7 @@ module.exports = async function (grunt) {
 					expand: true,
 					cwd: 'src/js',
 					src: '**/*.js',
-					dest: 'build/js'
+					dest: 'docs/js'
 				} ],
 			},
 		},
@@ -208,8 +208,6 @@ module.exports = async function (grunt) {
 
 		fs.writeFileSync('./src/font/data.json', JSON.stringify(logos));
 	});
-	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development','sitemap', 'copy', 'webfont', 'cssmin', 'connect' ]);
-	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less','sitemap', 'copy', 'webfont', 'cssmin', 'uglify:production' ]);
 	grunt.registerTask('jsdelivrcss', function() {
 		var fs = require('fs');
 		var css = fs.readFileSync('./dist/css/font-famous-jsdelivr.css', "utf8");
@@ -218,4 +216,6 @@ module.exports = async function (grunt) {
 
 		fs.writeFileSync('./dist/css/font-famous-jsdelivr.css', css);
 	});
+	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development','sitemap', 'copy', 'webfont', 'jsdelivrcss', 'cssmin', 'connect' ]);
+	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less','sitemap', 'copy', 'webfont', 'cssmin', 'jsdelivrcss', 'uglify:production' ]);
 };
