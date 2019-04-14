@@ -22,6 +22,7 @@ module.exports = async function (grunt) {
 				options: {
 					font: 'font-famous',
 					engine: 'node',
+					template: './src/font/template.css',
 					autoHint: false,
 					syntax: 'bootstrap',
 					normalize: true,
