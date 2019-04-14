@@ -1,10 +1,10 @@
 @font-face {
 	font-family:"Font Famous";
-	src:url("../font/font-famous.eot?d444531dfa38f322b162e2b1518c752b"); src:url("../font/font-famous.eot?d444531dfa38f322b162e2b1518c752b#iefix") format("embedded-opentype"),
-		url("../font/font-famous.woff2?d444531dfa38f322b162e2b1518c752b") format("woff2"),
-		url("../font/font-famous.woff?d444531dfa38f322b162e2b1518c752b") format("woff"),
-		url("../font/font-famous.ttf?d444531dfa38f322b162e2b1518c752b") format("truetype"),
-		url("../font/font-famous.svg?d444531dfa38f322b162e2b1518c752b#font-famous") format("svg");
+	src:url("/font/font-famous.eot?d444531dfa38f322b162e2b1518c752b"); src:url("/font/font-famous.eot?d444531dfa38f322b162e2b1518c752b#iefix") format("embedded-opentype"),
+		url("/font/font-famous.woff2?d444531dfa38f322b162e2b1518c752b") format("woff2"),
+		url("/font/font-famous.woff?d444531dfa38f322b162e2b1518c752b") format("woff"),
+		url("/font/font-famous.ttf?d444531dfa38f322b162e2b1518c752b") format("truetype"),
+		url("/font/font-famous.svg?d444531dfa38f322b162e2b1518c752b#font-famous") format("svg");
 	font-weight:normal;
 	font-style:normal;
 }

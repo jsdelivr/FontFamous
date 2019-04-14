@@ -33,7 +33,11 @@ module.exports = async function (grunt) {
 					templateOptions: {
 						baseClass: 'pr',
 						classPrefix: 'pr-'
-					}
+					},
+					customOutputs: [{
+						template: './src/font/font-famous-jsdelivr.css',
+						dest: './dist/css'
+					}]
 				}
 			}
 		},
@@ -164,11 +168,14 @@ module.exports = async function (grunt) {
 			},
 		},
 		cssmin: {
+			options: {
+				sourceMap: true
+			},
 			target: {
 				files: [{
 					expand: true,
 					cwd: './dist/css',
-					src: 'font-famous.css',
+					src: ['*.css'],
 					dest: './dist/css',
 					ext: '.min.css'
 				}]
@@ -203,4 +210,12 @@ module.exports = async function (grunt) {
 	});
 	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development','sitemap', 'copy', 'webfont', 'cssmin', 'connect' ]);
 	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less','sitemap', 'copy', 'webfont', 'cssmin', 'uglify:production' ]);
+	grunt.registerTask('jsdelivrcss', function() {
+		var fs = require('fs');
+		var css = fs.readFileSync('./dist/css/font-famous-jsdelivr.css', "utf8");
+
+		css = css.replace(/\.\.\//g, '/');
+
+		fs.writeFileSync('./dist/css/font-famous-jsdelivr.css', css);
+	});
 };
