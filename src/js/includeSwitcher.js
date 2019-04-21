@@ -45,7 +45,7 @@
 					}
 
 					if ($(this).hasClass('html')) {
-						$insertText.html('<div class="white">&lt</div><div class="red">link</div> ' + rel + ' ' + href + ' ' + ($checkbox.prop("checked") ? integrity + ' ' + crossorigin : '') + '<div class="white">&gt</div>');
+						$insertText.html('<div class="white">&lt</div><div class="red">link</div> ' + rel + ' ' + href + ($checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : '') + '<div class="white">&gt</div>');
 					} else if ($(this).hasClass('pug')) {
 						$insertText.html('<div class="red">link</div> <div class="white">(</div>' + rel + '<div class="white">, </div> ' + href + ($checkbox.prop("checked") ? '<div class="white">,</div> ' + integrity + '<div class="white">,</div> ' + crossorigin : '') + '<div class="white">)</div>');
 					} else {
@@ -57,7 +57,7 @@
 					let $selectedOption = $('.include .options-group .options .active');
 
 					if ($selectedOption.hasClass('html')) {
-						$insertText.html('<div class="white">&lt</div><div class="red">link</div> ' + rel + ' ' + href + ' ' + ($checkbox.prop("checked") ? integrity + ' ' + crossorigin : '') + '<div class="white">&gt</div>');
+						$insertText.html('<div class="white">&lt</div><div class="red">link</div> ' + rel + ' ' + href + ($checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : '') + '<div class="white">&gt</div>');
 					} else if ($selectedOption.hasClass('pug')) {
 						$insertText.html('<div class="red">link</div> <div class="white">(</div>' + rel + '<div class="white">, </div> ' + href + ($checkbox.prop("checked") ? '<div class="white">,</div> ' + integrity + '<div class="white">,</div> ' + crossorigin : '') + '<div class="white">)</div>');
 					} else {
