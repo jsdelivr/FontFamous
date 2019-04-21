@@ -48,15 +48,7 @@ module.exports = async function (grunt) {
 					layout: 'default.hbs',
 					layoutdir: './src/layouts/',
 					partials: './src/partials/**/*.hbs',
-					plugins: ['grunt-assemble-sitemap'],
 					data: ['./src/font/data.json'],
-					sitemap: {
-						homepage: 'http://www.fontfamous.com',
-						dest: './docs/',
-						removefolder: 'docs/',
-						pretty: true,
-						prettyimproved: true
-					}
 				},
 				files: [ {
 					cwd: './src/content/',
@@ -122,18 +114,6 @@ module.exports = async function (grunt) {
 
 		clean: [ 'dist/', 'docs/' ],
 
-		sitemap: {
-			dist: {
-				homepage:'https://fontfamous.com/',
-				pattern: ['docs/**/*.html'],
-				siteRoot: './docs/',
-				changefreq: 'weekly',
-				extension: {
-					required: false,
-				}
-			}
-		},
-
 		watch: {
 			assemble: {
 				files: 'src/**/*.hbs',
@@ -191,7 +171,6 @@ module.exports = async function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-sitemap');
 	grunt.loadNpmTasks('grunt-webfont');
 
 	grunt.registerTask('initLogos', function(){
@@ -216,6 +195,6 @@ module.exports = async function (grunt) {
 
 		fs.writeFileSync('./dist/css/font-famous-jsdelivr.css', css);
 	});
-	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development','sitemap', 'copy', 'webfont', 'jsdelivrcss', 'cssmin', 'connect' ]);
-	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less','sitemap', 'copy', 'webfont', 'cssmin', 'jsdelivrcss', 'uglify:production' ]);
+	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development', 'copy', 'webfont', 'jsdelivrcss', 'cssmin', 'connect' ]);
+	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less', 'copy', 'webfont', 'cssmin', 'jsdelivrcss', 'uglify:production' ]);
 };

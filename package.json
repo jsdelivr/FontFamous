@@ -27,10 +27,14 @@
 		"grunt-contrib-clean": "^2.0.0",
 		"grunt-contrib-connect": "^2.0.0",
 		"grunt-contrib-copy": "^1.0.0",
+		"grunt-contrib-cssmin": "^3.0.0",
 		"grunt-contrib-uglify": "^4.0.1",
 		"grunt-contrib-watch": "^1.1.0",
-		"grunt-contrib-cssmin": "^3.0.0",
-		"grunt-sitemap": "^2.0.1",
 		"grunt-webfont": "^1.7.2"
+	},
+	"devDependencies": {
+		"@types/clipboard": "^2.0.1",
+		"@types/jquery": "^3.3.29",
+		"@types/toastr": "^2.1.37"
 	}
 }
