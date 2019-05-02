@@ -32,7 +32,7 @@
 			$(document).ready(function () {
 				$checkbox.prop("checked", false);
 
-				$insertText.html('<div class="white">&lt</div><div class="red">link</div> ' + rel + ' ' + href + ' ' + ($checkbox.prop("checked") ? integrity + ' ' + crossorigin : '') + '<div class="white">&gt</div>');
+				$insertText.html('<div class="white">&lt</div><div class="red">link</div> ' + rel + ' ' + href + ($checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : '') + '<div class="white">&gt</div>');
 
 				$('.include .options-group .options a').click(function () {
 					$('.options a').removeClass('active');

@@ -30,6 +30,7 @@ module.exports = async function (grunt) {
 					optimize: false,
 					types: 'eot,woff2,woff,ttf,svg',
 					htmlDemo: false,
+					hashes: false,
 					templateOptions: {
 						baseClass: 'pr',
 						classPrefix: 'pr-'
@@ -187,14 +188,28 @@ module.exports = async function (grunt) {
 
 		fs.writeFileSync('./src/font/data.json', JSON.stringify(logos));
 	});
-	grunt.registerTask('jsdelivrcss', function() {
+	grunt.registerTask('postfontgen', function() {
 		var fs = require('fs');
 		var css = fs.readFileSync('./dist/css/font-famous-jsdelivr.css', "utf8");
+		var pkgJson = JSON.parse(fs.readFileSync('./package.json', "utf8"));
 
-		css = css.replace(/\.\.\//g, '/');
+		css = css.replace(/\.\.\//g, '');
+		css = css.replace(/"\);/, '?v' + pkgJson.version + '");');
+		css = css.replace(/"\) format/g, '?v' + pkgJson.version + '") format');
+		css = css.replace(`#iefix?v${pkgJson.version}`, `v${pkgJson.version}#iefix`);
+		css = css.replace(`#font-famous?v${pkgJson.version}`, `?v${pkgJson.version}#font-famous`);
 
 		fs.writeFileSync('./dist/css/font-famous-jsdelivr.css', css);
+
+		css = fs.readFileSync('./dist/css/font-famous.css', "utf8");
+
+		css = css.replace(/"\);/, '?v' + pkgJson.version + '");');
+		css = css.replace(/"\) format/g, '?v' + pkgJson.version + '") format');
+		css = css.replace(`#iefix?v${pkgJson.version}`, `v${pkgJson.version}#iefix`);
+		css = css.replace(`#font-famous?v${pkgJson.version}`, `?v${pkgJson.version}#font-famous`);
+
+		fs.writeFileSync('./dist/css/font-famous.css', css);
 	});
-	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development', 'copy', 'webfont', 'jsdelivrcss', 'cssmin', 'connect' ]);
-	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less', 'copy', 'webfont', 'cssmin', 'jsdelivrcss', 'uglify:production' ]);
+	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development', 'copy', 'webfont', 'postfontgen', 'cssmin', 'connect' ]);
+	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less', 'copy', 'webfont', 'postfontgen', 'cssmin', 'uglify:production' ]);
 };
