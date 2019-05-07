@@ -15,7 +15,7 @@
 
 		var logoClipboard = new ClipboardJS('.section-4 .row>div>div', {
 			text: function(trigger) {
-				return '<i class="pr ' + $('.logo-title', trigger).text() + '"></i>';
+				return `<i class="pr ${$('.logo-title', trigger).text()}"></i>`;
 			}
 		});
 
