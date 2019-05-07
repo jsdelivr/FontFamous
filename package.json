@@ -3,6 +3,7 @@
 	"description": "The free vector media logo font",
 	"version": "2.0.0",
 	"license": "MIT",
+	"jsdelivr": "./dist/css/font-famous-jsdelivr.min.css",
 	"scripts": {
 		"build": "grunt build",
 		"start": "grunt",
