@@ -12,7 +12,7 @@ Show off your recent press mentions with a couple lines of CSS and get back to m
 Include the Font Famous style sheet in your <head> section:
 
 ```
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontfamous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontfamous@2">
 ```
 
 #### What's Included
