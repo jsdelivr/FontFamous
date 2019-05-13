@@ -34,8 +34,11 @@
 		"grunt-webfont": "^1.7.2"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.4.4",
+		"@babel/preset-env": "^7.4.4",
 		"@types/clipboard": "^2.0.1",
 		"@types/jquery": "^3.3.29",
-		"@types/toastr": "^2.1.37"
+		"@types/toastr": "^2.1.37",
+		"grunt-babel": "^8.0.0"
 	}
 }

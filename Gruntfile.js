@@ -9,7 +9,7 @@ module.exports = async function (grunt) {
 				options: {
 					port: port,
 					keepalive: true,
-					base: './'
+					base: [ './docs', './' ]
 				}
 			}
 		},
@@ -78,13 +78,17 @@ module.exports = async function (grunt) {
 				files: [
 					{ expand: true, cwd: 'src/img/', src: [ '**/*' ], dest: 'docs/img/' },
 					{ expand: true, cwd: 'src/fonts/', src: [ '**/*' ], dest: 'docs/fonts/' },
-					{ expand: true, cwd: 'src/js/', src: [ '**/*' ], dest: 'docs/js/' },
 					{ expand: true, cwd: 'src/icons/', src: [ '**/*' ], dest: 'docs/icons/' },
 					{ expand: true, cwd: 'docs/', src: [ '**/*.html' ], dest: 'docs/' },
 					{ expand: true, cwd: 'src/content/', src: [ '**/_*' ], dest: 'docs/'},
 					{ expand: true, cwd: 'src/logos/font/', src: [ '**/*' ], dest: 'docs/logos'},
 				],
 			},
+			prod: {
+				files: [
+					{ expand: true, cwd: 'dist/', src: [ '**/*' ], dest: 'docs/dist/' },
+				]
+			}
 		},
 
 		less: {
@@ -138,11 +142,34 @@ module.exports = async function (grunt) {
 				},
 			},
 		},
+		babel: {
+			options: {
+				sourceMap: true,
+				presets: [
+					[
+						'@babel/preset-env',
+						{
+							targets: {
+								ie: 11
+							}
+						}
+					]
+				]
+			},
+			docs: {
+				files: [ {
+					expand: true,
+					cwd: 'src/js',
+					src: '**/*.js',
+					dest: 'docs/js'
+				} ]
+			}
+		},
 		uglify: {
 			production: {
 				files: [ {
 					expand: true,
-					cwd: 'src/js',
+					cwd: 'docs/js',
 					src: '**/*.js',
 					dest: 'docs/js'
 				} ],
@@ -170,6 +197,7 @@ module.exports = async function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-babel');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-webfont');
@@ -188,6 +216,7 @@ module.exports = async function (grunt) {
 
 		fs.writeFileSync('./src/font/data.json', JSON.stringify(logos));
 	});
+
 	grunt.registerTask('postfontgen', function() {
 		var fs = require('fs');
 		var css = fs.readFileSync('./dist/css/font-famous-jsdelivr.css', "utf8");
@@ -210,6 +239,7 @@ module.exports = async function (grunt) {
 
 		fs.writeFileSync('./dist/css/font-famous.css', css);
 	});
-	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development', 'copy', 'webfont', 'postfontgen', 'cssmin', 'connect' ]);
-	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less', 'copy', 'webfont', 'postfontgen', 'cssmin', 'uglify:production' ]);
+
+	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development', 'copy:main', 'webfont', 'postfontgen', 'cssmin', 'babel', 'connect' ]);
+	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less', 'copy:main', 'webfont', 'postfontgen', 'cssmin', 'babel', 'uglify:production', 'copy:prod' ]);
 };
