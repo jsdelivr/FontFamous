@@ -222,7 +222,7 @@ module.exports = async function (grunt) {
 		var css = fs.readFileSync('./dist/css/font-famous-jsdelivr.css', "utf8");
 		var pkgJson = JSON.parse(fs.readFileSync('./package.json', "utf8"));
 
-		css = css.replace(/\.\.\//g, '');
+		css = css.replace(/\.\.\//g, 'fontfamous/dist/');
 		css = css.replace(/"\);/, '?v' + pkgJson.version + '");');
 		css = css.replace(/"\) format/g, '?v' + pkgJson.version + '") format');
 		css = css.replace(`#iefix?v${pkgJson.version}`, `v${pkgJson.version}#iefix`);
