@@ -28,117 +28,120 @@
 .pr-bbc:before {
 	content:"\f102";
 } 
-.pr-cbs:before {
+.pr-black-enterprise:before {
 	content:"\f103";
 } 
-.pr-cnbc:before {
+.pr-cbs:before {
 	content:"\f104";
 } 
-.pr-cnn:before {
+.pr-cnbc:before {
 	content:"\f105";
 } 
-.pr-communication-arts:before {
+.pr-cnn:before {
 	content:"\f106";
 } 
-.pr-cosmopolitan:before {
+.pr-communication-arts:before {
 	content:"\f107";
 } 
-.pr-entrepreneur:before {
+.pr-cosmopolitan:before {
 	content:"\f108";
 } 
-.pr-fast-company:before {
+.pr-entrepreneur:before {
 	content:"\f109";
 } 
-.pr-forbes:before {
+.pr-fast-company:before {
 	content:"\f10a";
 } 
-.pr-fortune:before {
+.pr-forbes:before {
 	content:"\f10b";
 } 
-.pr-fox:before {
+.pr-fortune:before {
 	content:"\f10c";
 } 
-.pr-glamour:before {
+.pr-fox:before {
 	content:"\f10d";
 } 
-.pr-gq:before {
+.pr-glamour:before {
 	content:"\f10e";
 } 
-.pr-hbr:before {
+.pr-gq:before {
 	content:"\f10f";
 } 
-.pr-huffington-post:before {
+.pr-hbr:before {
 	content:"\f110";
 } 
-.pr-in-style:before {
+.pr-huffington-post:before {
 	content:"\f111";
 } 
-.pr-inc:before {
+.pr-in-style:before {
 	content:"\f112";
 } 
-.pr-lifehacker:before {
+.pr-inc:before {
 	content:"\f113";
 } 
-.pr-mashable:before {
+.pr-lifehacker:before {
 	content:"\f114";
 } 
-.pr-nbc-v2:before {
+.pr-mashable:before {
 	content:"\f115";
 } 
-.pr-nbc:before {
+.pr-nbc-v2:before {
 	content:"\f116";
 } 
-.pr-new-york-times:before {
+.pr-nbc:before {
 	content:"\f117";
 } 
-.pr-people:before {
+.pr-new-york-times:before {
 	content:"\f118";
 } 
-.pr-product-hunt:before {
+.pr-people:before {
 	content:"\f119";
 } 
-.pr-readers-digest-v2:before {
+.pr-product-hunt:before {
 	content:"\f11a";
 } 
-.pr-readers-digest:before {
+.pr-readers-digest-v2:before {
 	content:"\f11b";
 } 
-.pr-sirius-xm:before {
+.pr-readers-digest:before {
 	content:"\f11c";
 } 
-.pr-techcrunch:before {
+.pr-sirius-xm:before {
 	content:"\f11d";
 } 
-.pr-the-guardian:before {
+.pr-techcrunch:before {
 	content:"\f11e";
 } 
-.pr-the-next-web:before {
+.pr-the-guardian:before {
 	content:"\f11f";
 } 
-.pr-the-verge:before {
+.pr-the-next-web:before {
 	content:"\f120";
 } 
-.pr-time:before {
+.pr-the-verge:before {
 	content:"\f121";
 } 
-.pr-usa-today:before {
+.pr-time:before {
 	content:"\f122";
 } 
-.pr-venture-beat:before {
+.pr-usa-today:before {
 	content:"\f123";
 } 
-.pr-vice:before {
+.pr-venture-beat:before {
 	content:"\f124";
 } 
-.pr-vogue:before {
+.pr-vice:before {
 	content:"\f125";
 } 
-.pr-wall-street-journal:before {
+.pr-vogue:before {
 	content:"\f126";
 } 
-.pr-washington-post:before {
+.pr-wall-street-journal:before {
 	content:"\f127";
 } 
-.pr-wired:before {
+.pr-washington-post:before {
 	content:"\f128";
+} 
+.pr-wired:before {
+	content:"\f129";
 }
