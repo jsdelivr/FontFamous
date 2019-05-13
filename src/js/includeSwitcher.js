@@ -4,22 +4,16 @@
 	const filePath = '/dist/css/font-famous.min.css';
 
 	$.get(jsdelivrEndpoint + pkgName, function(response) {
-		$.get(`${jsdelivrEndpoint + pkgName}@${response.tags.latest}`, function(pkg) {
-			const latestVersion = response.tags.latest;
+		const latestVersion = response.tags.latest;
 
-			let currentDir = pkg;
-			let path = filePath.split('/');
+		function isName(pkg) {
+			return pkg.name === filePath;
+		}
 
-			for (let i = 0; i < path.length; i++) {
-				currentDir.files.forEach(function(item) {
-					if (item.name === path[i]) {
-						currentDir = item;
-						return currentDir;
-					}
-				});
-			}
+		$.get(`${jsdelivrEndpoint + pkgName}@${latestVersion}/flat`, function(pkgList) {
 
-			const hash = 'sha256-' + currentDir.hash;
+
+			const hash = 'sha256-' + pkgList.files.find(isName).hash;
 
 			const rel = '<div class="orange">rel</div><div class="white">=</div>"stylesheet"';
 			const href = `<div class="orange">href</div><div class="white">=</div>"https://cdn.jsdelivr.net/npm/fontfamous@${latestVersion}${filePath}"`;
