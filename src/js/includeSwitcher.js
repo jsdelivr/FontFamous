@@ -14,7 +14,7 @@
 			const hash = 'sha256-' + pkgList.files.find(isName).hash;
 
 			const rel = '<div class="orange">rel</div><div class="white">=</div>"stylesheet"';
-			const href = `<div class="orange">href</div><div class="white">=</div>"https://cdn.jsdelivr.net/npm/fontfamous@${latestVersion}${filePath}"`;
+			const href = full => `<div class="orange">href</div><div class="white">=</div>"https://cdn.jsdelivr.net/npm/fontfamous@${full ? latestVersion : latestVersion.split('.')[0]}${full ? filePath : ''}"`;
 			const integrity = `<div class="orange">integrity</div><div class="white">=</div>"${hash}"`;
 			const crossorigin = '<div class="orange">crossorigin</div><div class="white">=</div>"anonymous"';
 
@@ -22,9 +22,7 @@
 			let $insertText = $('.options-group .insert-group .insert-text');
 
 			$(document).ready(function () {
-				$checkbox.prop("checked", false);
-
-				$insertText.html(`<div class="white">&lt</div><div class="red">link</div> ${rel} ${href}${$checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : ''}<div class="white">&gt</div>`);
+				$insertText.html(`<div class="white">&lt</div><div class="red">link</div> ${rel} ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : ''}<div class="white">&gt</div>`);
 
 				$('.include .options-group .options a').click(function () {
 					$('.options a').removeClass('active');
@@ -37,11 +35,11 @@
 					}
 
 					if ($(this).hasClass('html')) {
-						$insertText.html(`<div class="white">&lt</div><div class="red">link</div> ${rel} ${href}${$checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : ''}<div class="white">&gt</div>`);
+						$insertText.html(`<div class="white">&lt</div><div class="red">link</div> ${rel} ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : ''}<div class="white">&gt</div>`);
 					} else if ($(this).hasClass('pug')) {
-						$insertText.html(`<div class="red">link</div> <div class="white">(</div>${rel}<div class="white">, </div> ${href}${$checkbox.prop("checked") ? '<div class="white">,</div> ' + integrity + '<div class="white">,</div> ' + crossorigin : ''}<div class="white">)</div>`);
+						$insertText.html(`<div class="red">link</div> <div class="white">(</div>${rel}<div class="white">, </div> ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? '<div class="white">,</div> ' + integrity + '<div class="white">,</div> ' + crossorigin : ''}<div class="white">)</div>`);
 					} else {
-						$insertText.html(`<div class="red">%link</div> <div class="white">{</div><div class="orange">rel</div><div class="white">:</div> "stylesheet"<div class="white">,</div> <div class="orange">href</div><div class="white">:</div> "https://cdn.jsdelivr.net/npm/fontfamous@${latestVersion}${filePath}"${$checkbox.prop("checked") ? '<div class="white">,</div> ' + '<div class="orange">integrity</div><div class="white">:</div> "' + hash + '"' + '<div class="white">,</div> ' + '<div class="orange">crossorigin</div><div class="white">:</div> "anonymous"' : ''}<div class="white">}</div>`);
+						$insertText.html(`<div class="red">%link</div> <div class="white">{</div><div class="orange">rel</div><div class="white">:</div> "stylesheet"<div class="white">,</div> <div class="orange">href</div><div class="white">:</div> "https://cdn.jsdelivr.net/npm/fontfamous@${$checkbox.prop("checked") ? latestVersion : latestVersion.split('.')[0]}"${$checkbox.prop("checked") ? '<div class="white">,</div> ' + '<div class="orange">integrity</div><div class="white">:</div> "' + hash + '"' + '<div class="white">,</div> ' + '<div class="orange">crossorigin</div><div class="white">:</div> "anonymous"' : ''}<div class="white">}</div>`);
 					}
 				});
 
@@ -49,11 +47,11 @@
 					let $selectedOption = $('.include .options-group .options .active');
 
 					if ($selectedOption.hasClass('html')) {
-						$insertText.html(`<div class="white">&lt</div><div class="red">link</div> ${rel} ${href}${$checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : ''}<div class="white">&gt</div>`);
+						$insertText.html(`<div class="white">&lt</div><div class="red">link</div> ${rel} ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : ''}<div class="white">&gt</div>`);
 					} else if ($selectedOption.hasClass('pug')) {
-						$insertText.html(`<div class="red">link</div> <div class="white">(</div>${rel}<div class="white">, </div> ${href}${$checkbox.prop("checked") ? '<div class="white">,</div> ' + integrity + '<div class="white">,</div> ' + crossorigin : ''}<div class="white">)</div>`);
+						$insertText.html(`<div class="red">link</div> <div class="white">(</div>${rel}<div class="white">, </div> ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? '<div class="white">,</div> ' + integrity + '<div class="white">,</div> ' + crossorigin : ''}<div class="white">)</div>`);
 					} else {
-						$insertText.html(`<div class="red">%link</div> <div class="white">{</div><div class="orange">rel</div><div class="white">:</div> "stylesheet"<div class="white">,</div> <div class="orange">href</div><div class="white">:</div> "https://cdn.jsdelivr.net/npm/fontfamous@${latestVersion}${filePath}"${$checkbox.prop("checked") ? '<div class="white">,</div> ' + '<div class="orange">integrity</div><div class="white">:</div> "' + hash + '"' + '<div class="white">,</div> ' + '<div class="orange">crossorigin</div><div class="white">:</div> "anonymous"' : ''}<div class="white">}</div>`);
+						$insertText.html(`<div class="red">%link</div> <div class="white">{</div><div class="orange">rel</div><div class="white">:</div> "stylesheet"<div class="white">,</div> <div class="orange">href</div><div class="white">:</div> "https://cdn.jsdelivr.net/npm/fontfamous@${$checkbox.prop("checked") ? latestVersion : latestVersion.split('.')[0]}${$checkbox.prop("checked") ? filePath : ''}"${$checkbox.prop("checked") ? '<div class="white">,</div> ' + '<div class="orange">integrity</div><div class="white">:</div> "' + hash + '"' + '<div class="white">,</div> ' + '<div class="orange">crossorigin</div><div class="white">:</div> "anonymous"' : ''}<div class="white">}</div>`);
 					}
 				});
 			});
