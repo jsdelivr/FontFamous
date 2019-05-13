@@ -11,8 +11,6 @@
 		}
 
 		$.get(`${jsdelivrEndpoint + pkgName}@${latestVersion}/flat`, function(pkgList) {
-
-
 			const hash = 'sha256-' + pkgList.files.find(isName).hash;
 
 			const rel = '<div class="orange">rel</div><div class="white">=</div>"stylesheet"';
