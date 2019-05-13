@@ -1,4 +1,4 @@
-# [Font Famous](http://fontfamous.com) v2.0.0
+# [Font Famous](http://fontfamous.com) v2
 
 Font Famous is the free vector media logo font.
 
@@ -6,7 +6,16 @@ Stop wasting time searching Google Images and spinning out in Photoshop trying t
 
 Show off your recent press mentions with a couple lines of CSS and get back to making fame worthy products.
 
-### What's Included
+
+### Get started
+
+Include the Font Famous style sheet in your <head> section:
+
+```
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontfamous">
+```
+
+#### What's Included
 
 ```
 ├── css
@@ -28,13 +37,14 @@ Please read [CONTRIBUTING.md](https://github.com/fontfamous/fontfamous.github.io
 
 MIT
 
-### Created by
-[Anthony David Adams](https://twitter.com/AnthonyAdams)
+### Credits
 
-Follow [@FontFamous](https://twitter.com/FontFamous) on Twitter for updates.
+Updated and maintained by jsDelivr team and [Prospect One](https://prospectone.io/)
+Created by [Anthony David Adams](https://twitter.com/AnthonyAdams)
+Follow [@jsDelivr](https://twitter.com/jsDelivr) on Twitter for updates.
 
 ### Thanks
 
-Big thanks to [Justin Dorfman](https://twitter.com/jdorfman) @ [MaxCDN](http://maxcdn.com), [Dave Gandy](https://twitter.com/davegandy) @ [Font Awesome](http://fontawesome.io) and all the folks who have inspired / helped this project get this far.
+Big thanks to [Justin Dorfman](https://twitter.com/jdorfman), [Dave Gandy](https://twitter.com/davegandy) @ [Font Awesome](http://fontawesome.io) and all the folks who have inspired / helped this project get this far.
 
 The Font Famous logo includes "[Star](https://thenounproject.com/term/cool-star/12713/)" by Paulo Sá Ferreira from [the Noun Project](https://thenounproject.com).
