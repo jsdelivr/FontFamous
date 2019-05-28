@@ -60,7 +60,7 @@ module.exports = async function (grunt) {
 					layout: 'default.hbs',
 					layoutdir: './src/layouts/',
 					partials: './src/partials/**/*.hbs',
-					data: ['./src/font/data.json'],
+					data: ['./src/font/data.json', './package.json'],
 				},
 				files: [ {
 					cwd: './src/content/',
