@@ -12,17 +12,32 @@
 
 		$.get(`${jsdelivrEndpoint + pkgName}@${latestVersion}/flat`, function(pkgList) {
 			const hash = 'sha256-' + pkgList.files.find(isName).hash;
+			const baseCdnUrl = 'https://cdn.jsdelivr.net/npm/fontfamous';
+
+			const getVersion = full => full ? latestVersion : latestVersion.split('.')[0];
+			const getHref = full => `<div class="orange">href</div><div class="white">=</div>"${baseCdnUrl}@${getVersion(full)}${full ? filePath : ''}"`;
 
 			const rel = '<div class="orange">rel</div><div class="white">=</div>"stylesheet"';
-			const href = full => `<div class="orange">href</div><div class="white">=</div>"https://cdn.jsdelivr.net/npm/fontfamous@${full ? latestVersion : latestVersion.split('.')[0]}${full ? filePath : ''}"`;
 			const integrity = `<div class="orange">integrity</div><div class="white">=</div>"${hash}"`;
 			const crossorigin = '<div class="orange">crossorigin</div><div class="white">=</div>"anonymous"';
+
+			function getHtml (sri) {
+				return `<div class="white">&lt</div><div class="red">link</div> ${rel} ${getHref(sri)}${sri ? ` ${integrity} ${crossorigin}` : ''}<div class="white">&gt</div>`;
+			}
+
+			function getPug (sri) {
+				return `<div class="red">link</div> <div class="white">(</div>${rel}<div class="white">, </div> ${getHref(sri)}${sri ? `<div class="white">,</div> ${integrity}<div class="white">,</div> ${crossorigin}` : ''}<div class="white">)</div>`;
+			}
+
+			function getHaml(sri) {
+				return `<div class="red">%link</div> <div class="white">{</div><div class="orange">rel</div><div class="white">:</div> "stylesheet"<div class="white">,</div> <div class="orange">href</div><div class="white">:</div> "${baseCdnUrl}@${sri ? latestVersion : latestVersion.split('.')[0]}"${sri ? `<div class="white">,</div> <div class="orange">integrity</div><div class="white">:</div> "${hash}"<div class="white">,</div> <div class="orange">crossorigin</div><div class="white">:</div> "anonymous"` : ''}<div class="white">}</div>`;
+			}
 
 			let $checkbox = $('.include .options-group .container input');
 			let $insertText = $('.options-group .insert-group .insert-text');
 
 			$(document).ready(function () {
-				$insertText.html(`<div class="white">&lt</div><div class="red">link</div> ${rel} ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : ''}<div class="white">&gt</div>`);
+				$insertText.html(getHtml($checkbox.prop("checked")));
 
 				$('.include .options-group .options a').click(function () {
 					$('.options a').removeClass('active');
@@ -33,25 +48,17 @@
 					} else {
 						$('.options .bottom-slider').css({left: $(this).data('left')});
 					}
-
-					if ($(this).hasClass('html')) {
-						$insertText.html(`<div class="white">&lt</div><div class="red">link</div> ${rel} ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : ''}<div class="white">&gt</div>`);
-					} else if ($(this).hasClass('pug')) {
-						$insertText.html(`<div class="red">link</div> <div class="white">(</div>${rel}<div class="white">, </div> ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? '<div class="white">,</div> ' + integrity + '<div class="white">,</div> ' + crossorigin : ''}<div class="white">)</div>`);
-					} else {
-						$insertText.html(`<div class="red">%link</div> <div class="white">{</div><div class="orange">rel</div><div class="white">:</div> "stylesheet"<div class="white">,</div> <div class="orange">href</div><div class="white">:</div> "https://cdn.jsdelivr.net/npm/fontfamous@${$checkbox.prop("checked") ? latestVersion : latestVersion.split('.')[0]}"${$checkbox.prop("checked") ? '<div class="white">,</div> ' + '<div class="orange">integrity</div><div class="white">:</div> "' + hash + '"' + '<div class="white">,</div> ' + '<div class="orange">crossorigin</div><div class="white">:</div> "anonymous"' : ''}<div class="white">}</div>`);
-					}
 				});
 
-				$checkbox.click(function () {
+				$('.include .options-group .container input, .include .options-group .options a').click(function () {
 					let $selectedOption = $('.include .options-group .options .active');
 
 					if ($selectedOption.hasClass('html')) {
-						$insertText.html(`<div class="white">&lt</div><div class="red">link</div> ${rel} ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? ' ' + integrity + ' ' + crossorigin : ''}<div class="white">&gt</div>`);
+						$insertText.html(getHtml($checkbox.prop("checked")));
 					} else if ($selectedOption.hasClass('pug')) {
-						$insertText.html(`<div class="red">link</div> <div class="white">(</div>${rel}<div class="white">, </div> ${href($checkbox.prop("checked"))}${$checkbox.prop("checked") ? '<div class="white">,</div> ' + integrity + '<div class="white">,</div> ' + crossorigin : ''}<div class="white">)</div>`);
+						$insertText.html(getPug($checkbox.prop("checked")));
 					} else {
-						$insertText.html(`<div class="red">%link</div> <div class="white">{</div><div class="orange">rel</div><div class="white">:</div> "stylesheet"<div class="white">,</div> <div class="orange">href</div><div class="white">:</div> "https://cdn.jsdelivr.net/npm/fontfamous@${$checkbox.prop("checked") ? latestVersion : latestVersion.split('.')[0]}${$checkbox.prop("checked") ? filePath : ''}"${$checkbox.prop("checked") ? '<div class="white">,</div> ' + '<div class="orange">integrity</div><div class="white">:</div> "' + hash + '"' + '<div class="white">,</div> ' + '<div class="orange">crossorigin</div><div class="white">:</div> "anonymous"' : ''}<div class="white">}</div>`);
+						$insertText.html(getHaml($checkbox.prop("checked")));
 					}
 				});
 			});
