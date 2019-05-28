@@ -43,6 +43,17 @@ module.exports = async function (grunt) {
 			}
 		},
 
+		svgmin: {
+			dist: {
+				files: [{
+					cwd: './dist',
+					dest: './dist',
+					expand: true,
+					src: '**/*.svg',
+				}]
+			}
+		},
+
 		assemble: {
 			posts: {
 				options: {
@@ -191,6 +202,7 @@ module.exports = async function (grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-svgmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-assemble');
 	grunt.loadNpmTasks('assemble-less');
@@ -240,6 +252,6 @@ module.exports = async function (grunt) {
 		fs.writeFileSync('./dist/css/font-famous.css', css);
 	});
 
-	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development', 'copy:main', 'webfont', 'postfontgen', 'cssmin', 'babel', 'connect' ]);
-	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less', 'copy:main', 'webfont', 'postfontgen', 'cssmin', 'babel', 'uglify:production', 'copy:prod' ]);
+	grunt.registerTask('default', [ 'clean', 'initLogos', 'assemble', 'less:development', 'copy:main', 'webfont', 'postfontgen', 'cssmin', 'svgmin', 'babel', 'connect' ]);
+	grunt.registerTask('build', [ 'clean', 'initLogos', 'assemble', 'less', 'copy:main', 'webfont', 'postfontgen', 'cssmin', 'svgmin', 'babel', 'uglify:production', 'copy:prod' ]);
 };
