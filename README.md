@@ -15,20 +15,6 @@ Include the Font Famous style sheet in your <head> section:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontfamous@2">
 ```
 
-#### What's Included
-
-```
-├── css
-│   ├── font-famous.css
-│   └── font-famous.min.css
-└── font
-    ├── font-famous.eot
-    ├── font-famous.svg
-    ├── font-famous.ttf
-    ├── font-famous.woff
-    └── font-famous.woff2
-```
-
 ### Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/fontfamous/fontfamous.github.io/blob/master/CONTRIBUTING.md).
