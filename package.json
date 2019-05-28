@@ -39,6 +39,7 @@
 		"@types/clipboard": "^2.0.1",
 		"@types/jquery": "^3.3.29",
 		"@types/toastr": "^2.1.37",
-		"grunt-babel": "^8.0.0"
+		"grunt-babel": "^8.0.0",
+		"grunt-svgmin": "^6.0.0"
 	}
 }
