@@ -1,4 +1,4 @@
-# [Font Famous](http://fontfamous.com) v2
+# [Font Famous](https://fontfamous.com) v2
 
 Font Famous is the free vector media logo font.
 
@@ -17,7 +17,7 @@ Include the Font Famous style sheet in your <head> section:
 
 ### Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/fontfamous/fontfamous.github.io/blob/master/CONTRIBUTING.md).
+Please read [CONTRIBUTING.md](https://github.com/jsdelivr/FontFamous/blob/master/CONTRIBUTING.md).
 
 ### License
 
@@ -25,7 +25,7 @@ MIT
 
 ### Credits
 
-Updated and maintained by jsDelivr team and [Prospect One](https://prospectone.io/)
+Updated and maintained by the jsDelivr team, [Dmitriy Akulov](https://dakulov.com/) and [appfleet](https://appfleet.com/)
 Created by [Anthony David Adams](https://twitter.com/AnthonyAdams)
 Follow [@jsDelivr](https://twitter.com/jsDelivr) on Twitter for updates.
 

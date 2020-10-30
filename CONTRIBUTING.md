@@ -1,6 +1,6 @@
 # Contributing to Font Famous
 
-Before adding any new logos to this repo please [create an issue](https://github.com/fontfamous/fontfamous.github.io/issues) first (follow the protocol below). Font Famous was made specifically for **media** brand logos.  Suggesting to add any other type of logo would be counterintuitive.
+Before adding any new logos to this repo please [create an issue](https://github.com/jsdelivr/FontFamous/issues) first (follow the protocol below). Font Famous was made specifically for **media** brand logos.  Suggesting to add any other type of logo would be counterintuitive.
 
 #### Good Logo Category Examples
 * Magazine
